@@ -2,6 +2,7 @@
 const gulp = require('gulp'),
       sass = require('gulp-sass'),
       rename = require('gulp-rename'),
+      concat = require('gulp-concat'),
       concatcss = require('gulp-concat-css'),
       minifycss = require('gulp-clean-css'),
       htmlmin = require('gulp-htmlmin'),
@@ -44,9 +45,15 @@ gulp.task('build-styles', () => {
 });
 
 gulp.task('build-scripts', () => {
-  return tsProject.src()
+  // Compile Typescript
+  tsProject.src()
     .pipe(tsProject())
-    .js.pipe(gulp.dest('dist/js'));
+    .js.pipe(gulp.dest('dist/js'))
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest('dist/js'))
+    .pipe(rename('app.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('build-images', () => {
