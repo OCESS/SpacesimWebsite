@@ -14,14 +14,19 @@ const gulp = require('gulp'),
       vbuffer = require('vinyl-buffer'),
       sourcemaps = require('gulp-sourcemaps'),
       ts = require('gulp-typescript'),
-      tsProject = ts.createProject('tsconfig.json');
+      tsProject = ts.createProject('tsconfig.json'),
+      nunjucksRender = require('gulp-nunjucks-render');
 
-gulp.task('build-clean', () => {
+gulp.task('clean', () => {
   return del('dist', { force: true });
 });
 
 gulp.task('build-markup', () => {
   return gulp.src('src/html/**/*.html')
+    // Render nunjucks templates
+    .pipe(nunjucksRender({
+      path: ['src/html/templates']
+    }))
     // Minify
     .pipe(htmlmin({ collapseWhitespace: true }))
     // Output
@@ -70,7 +75,7 @@ gulp.task('build-images', () => {
 
 // Build all
 gulp.task('build', () => {
-  runSeq('build-clean', ['build-markup', 'build-styles', 'build-scripts', 'build-images']);
+  runSeq('clean', ['build-markup', 'build-styles', 'build-scripts', 'build-images']);
 });
 
 // Default to build all
