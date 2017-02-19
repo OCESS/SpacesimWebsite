@@ -11,8 +11,9 @@ const gulp = require('gulp'),
       runSeq = require('run-sequence'),
       source = require('vinyl-source-stream'),
       vbuffer = require('vinyl-buffer'),
-      babel = require('gulp-babel'),
-      sourcemaps = require('gulp-sourcemaps');
+      sourcemaps = require('gulp-sourcemaps'),
+      ts = require('gulp-typescript'),
+      tsProject = ts.createProject('tsconfig.json');
 
 gulp.task('build-clean', () => {
   return del('dist', { force: true });
@@ -43,9 +44,9 @@ gulp.task('build-styles', () => {
 });
 
 gulp.task('build-scripts', () => {
-  return gulp.src('src/js/app.js')
-    .pipe(babel())
-    .pipe(gulp.dest('dist/js'));
+  return tsProject.src()
+    .pipe(tsProject())
+    .js.pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('build-images', () => {
