@@ -33,13 +33,13 @@ gulp.task('build-styles', () => {
     // Compile SASS
     .pipe(sass().on('error', sass.logError))
     // Concat
-    .pipe(concatcss('style.css'))
+    .pipe(concatcss('app.css'))
     // Save non minified
     .pipe(gulp.dest('dist/css'))
     // Minify
     .pipe(minifycss())
     // Rename
-    .pipe(rename('style.min.css'))
+    .pipe(rename('app.min.css'))
     // Output;
     .pipe(gulp.dest('dist/css'));
 });
@@ -54,6 +54,10 @@ gulp.task('build-scripts', () => {
     .pipe(rename('app.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
+
+  // Copy libraries
+  return gulp.src('src/js/lib/**/*.js')
+    .pipe(gulp.dest('dist/js/lib'));
 });
 
 gulp.task('build-images', () => {
