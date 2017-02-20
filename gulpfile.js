@@ -22,7 +22,7 @@ gulp.task('clean', () => {
 });
 
 gulp.task('build-markup', () => {
-  return gulp.src('src/html/**/*.html')
+  return gulp.src('src/html/*.html')
     // Render nunjucks templates
     .pipe(nunjucksRender({
       path: ['src/html/templates']
@@ -33,7 +33,7 @@ gulp.task('build-markup', () => {
         removeComments: true
       }))
     // Output
-    .pipe(gulp.dest('dist/html'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build-styles', () => {
