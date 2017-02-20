@@ -1,0 +1,32 @@
+{% macro active(activePage='home') %}
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <!-- navbar header -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-exapnded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">OCESS</a>
+    </div>
+    <!-- end navbar header -->
+
+    <!-- nav links -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="{% if activePage == 'home' %} active {% endif %}"><a href="index.html">Home</a></li>
+        <li class="{% if activePage == 'about' %} active {% endif %}"><a href="about.html">About</a></li>
+        <li class="{% if activePage == 'contact' %} active {% endif %}"><a href="contact.html">Contact Us</a></li>
+        <li class="{% if activePage == 'eeps' %} active {% endif %}"><a href="eeps.html">EEPS</a></li>
+        <li class="{% if activePage == 'downloads' %} active {% endif %}"><a href="downloads.html">Downloads</a></li>
+        <li class="{% if activePage == 'joinUs' %} active {% endif %}"><a href="joinUs.html">Join Us</a></li>
+      </ul>
+    </div>
+    <!-- end nav links -->
+  </div>
+</div>
+
+{% endmacro %}
