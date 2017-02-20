@@ -28,7 +28,10 @@ gulp.task('build-markup', () => {
       path: ['src/html/templates']
     }))
     // Minify
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(htmlmin({
+        collapseWhitespace: true,
+        removeComments: true
+      }))
     // Output
     .pipe(gulp.dest('dist/html'));
 });
