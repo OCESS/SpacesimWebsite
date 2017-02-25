@@ -37,7 +37,7 @@ gulp.task('build-markup', () => {
 });
 
 gulp.task('build-styles', () => {
-  gulp.src('src/scss/**/*.scss')
+  return gulp.src('src/scss/**/*.scss')
     // Compile SASS
     .pipe(sass().on('error', sass.logError))
     // Concat
@@ -50,10 +50,6 @@ gulp.task('build-styles', () => {
     .pipe(rename('app.min.css'))
     // Output;
     .pipe(gulp.dest('dist/css'));
-
-  // Copy fonts
-  return gulp.src('src/fonts/**/*')
-    .pipe(gulp.dest('dist/fonts'));
 });
 
 gulp.task('build-scripts', () => {
