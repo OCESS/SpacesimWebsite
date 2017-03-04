@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <!-- navbar -->
+  {{nav.active('downloads')}}
+  <!-- end navbar -->
+  
+  <!-- main container -->
+  <div class="container-fluid">
+    
+    <!-- header -->
+    <h1 class="text-center page-header">Downloads</h1>
+    <!-- end header -->
+
+    <!-- content -->
+    <div class="col-md-6 col-md-offset-3">
+      
+      <!-- downloads -->
+      {% for download in downloads %}
+      <div class="download">
+        <h3>
+          {{ download.title}}
+          <a class="btn btn-success pull-right" role="button" data-toggle="popover" data-placement="left" data-trigger="focus" tabindex="0" title="Choose file format" data-content="
+            {% filter replace('"', "'") %}
+              {% for link in download.links %}
+                <p><a href="{{ link.url }}">{{ link.name}}</a></p>
+              {% endfor %}
+            {% endfilter %}
+          ">
+            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+            Download
+          </a></h3>
+        <p>{{ download.description }}</p>
+      </div>
+      {% endfor %}
+      <!-- end downloads -->
+
+    </div>
+    <!-- end content -->
+    
+  </div>
+  <!-- end main container -->
+
+{% endblock %}

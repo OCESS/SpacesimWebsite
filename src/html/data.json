@@ -1,0 +1,58 @@
+{
+  "downloads": [
+    {
+      "title": "Orbit Software Suite",
+      "description": "This is the latest version of Orbit, the space simulation software that the OCESS uses.",
+      "links": [
+        {
+          "name": ".zip",
+          "url": "downloads/OCESS_Bundle.zip"
+        },
+        {
+          "name": ".rar",
+          "url": "downloads/OCESS_Bundle.rar"
+        }
+      ]
+    },
+    {
+      "title": "Letter to Parents",
+      "description": "A letter for current and future parents of Spacesim members. Printed copies are available at the Spacesim office at Lisgar.",
+      "links": [
+        {
+          "name": ".pdf",
+          "url": "downloads/OCESSLetterToParents.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Map of 440",
+      "description": "This is a map of the building where our worksessions take place. The Spacesim room is marked on it.",
+      "links": [
+        {
+          "name": ".jpg",
+          "url": "downloads/440Map.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Street Map to 440",
+      "description": "Directions on how to get to 440 from Lisgar.",
+      "links": [
+        {
+          "name": ".png",
+          "url": "downloads/440StreetMap.png"
+        }
+      ]
+    },
+    {
+      "title": "More Info",
+      "description": "More detailed info about what Spacesim is and what we do.",
+      "links": [
+        {
+          "name": ".pdf",
+          "url": "downloads/MoreInfo.pdf"
+        }
+      ]
+    }
+  ]
+}

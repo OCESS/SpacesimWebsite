@@ -6,16 +6,15 @@ const gulp = require('gulp'),
       concatcss = require('gulp-concat-css'),
       minifycss = require('gulp-clean-css'),
       htmlmin = require('gulp-htmlmin'),
-      imagemin = require('gulp-imagemin'),
-      uglify = require('gulp-uglify'),
-      del = require('del'),
+      imagemin = require('gulp-imagemin'), uglify = require('gulp-uglify'), del = require('del'),
       runSeq = require('run-sequence'),
       source = require('vinyl-source-stream'),
       vbuffer = require('vinyl-buffer'),
       sourcemaps = require('gulp-sourcemaps'),
       ts = require('gulp-typescript'),
       tsProject = ts.createProject('tsconfig.json'),
-      nunjucksRender = require('gulp-nunjucks-render');
+      nunjucksRender = require('gulp-nunjucks-render')
+      data = require('gulp-data');
 
 gulp.task('clean', () => {
   return del('dist', { force: true });
@@ -23,6 +22,10 @@ gulp.task('clean', () => {
 
 gulp.task('build-markup', () => {
   return gulp.src('src/html/*.html')
+    // Add data
+    .pipe(data(() => {
+      return require('./src/html/data.json')
+    }))
     // Render nunjucks templates
     .pipe(nunjucksRender({
       path: ['src/html/templates']
@@ -80,9 +83,15 @@ gulp.task('build-images', () => {
     .pipe(gulp.dest('dist/img'));
 });
 
+gulp.task('build-downloads', () => {
+  return gulp.src('src/downloads/**/*')
+    // Output
+    .pipe(gulp.dest('dist/downloads'));
+});
+
 // Build all
 gulp.task('build', () => {
-  runSeq('clean', ['build-markup', 'build-styles', 'build-scripts', 'build-images']);
+  runSeq('clean', ['build-markup', 'build-styles', 'build-scripts', 'build-images', 'build-downloads']);
 });
 
 // Default to build all
