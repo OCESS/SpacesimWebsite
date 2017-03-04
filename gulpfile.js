@@ -33,7 +33,11 @@ gulp.task('build-markup', () => {
     // Minify
     .pipe(htmlmin({
         collapseWhitespace: true,
-        removeComments: true
+        collapseInlineTagWhitespace: true,
+        removeComments: true,
+        removeEmptyAttributes: true,
+        removeRedundantAttributes: true,
+        removeAttributeQuotes: true
       }))
     // Output
     .pipe(gulp.dest('dist'));
