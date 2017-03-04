@@ -1,12 +1,8 @@
 // Boostrap
 @import "lib/bootstrap/bootstrap";
 
-body {
-  // Make content appear below navbar
-  padding-top: 50px;
-
-  // Page header
-  .page-header {
-    margin-top: 40px;
-  }
-}
+// Custom styles
+// Global
+@import "global.scss";
+// EEPs page
+@import "eeps.scss";
