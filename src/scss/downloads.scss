@@ -1,3 +1,9 @@
 .download-list {
   list-style-type: none;
 }
+
+// Download links
+div.download > h3 > a.download-link {
+  color: lighten(#1A4A6B, 15%);
+}
+

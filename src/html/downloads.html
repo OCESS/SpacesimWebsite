@@ -24,7 +24,7 @@
           <a class="btn btn-success pull-right" role="button" data-toggle="popover" data-placement="left" data-trigger="focus" tabindex="0" title="Choose file format" data-content="
             {%- filter replace('"', "'") %}
               {%- for link in download.links %}
-                <p><a href="{{ link.url }}">{{ link.name}}</a></p>
+                <p><a class="download-link" href="{{ link.url }}">{{ link.name}}</a></p>
               {%- endfor %}
             {%- endfilter %}
           ">
