@@ -21,14 +21,14 @@ gulp.task('clean', () => {
 });
 
 gulp.task('build-markup', () => {
-  return gulp.src('src/html/*.html')
+  return gulp.src('src/njk/*.njk')
     // Add data
     .pipe(data(() => {
-      return require('./src/html/data.json')
+      return require('./src/njk/data.json')
     }))
     // Render nunjucks templates
     .pipe(nunjucksRender({
-      path: ['src/html/templates']
+      path: ['src/njk/templates']
     }))
     // Minify
     .pipe(htmlmin({
