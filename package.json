@@ -1,0 +1,29 @@
+{
+  "name": "SpacesimWebsite",
+  "version": "1.0.0",
+  "description": "The new Space Sim website.",
+  "main": "index.html",
+  "repository": "https://github.com/OCESS/SpacesimWebsite.git",
+  "author": "Ivan Fonseca <ivanfon@riseup.net>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/jquery": "3.2.13",
+    "del": "3.0.0",
+    "gulp": "3.9.1",
+    "gulp-clean-css": "3.9.0",
+    "gulp-concat": "2.6.1",
+    "gulp-concat-css": "2.3.0",
+    "gulp-data": "1.2.1",
+    "gulp-htmlmin": "3.0.0",
+    "gulp-imagemin": "3.4.0",
+    "gulp-nunjucks-render": "2.2.1",
+    "gulp-rename": "1.2.2",
+    "gulp-sass": "3.1.0",
+    "gulp-typescript": "3.2.2",
+    "gulp-uglify": "3.0.0",
+    "run-sequence": "2.2.0",
+    "typescript": "2.5.3",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0"
+  }
+}

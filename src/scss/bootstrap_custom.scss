@@ -1,0 +1,59 @@
+// Set some custom Bootstrap variables
+// Full list is in lib/bootstrap/bootstrap/_variables.scss
+
+// Primary colour
+$primary-col: #315273;
+// Secondary colour
+$secondary-col: #2C4A68;
+
+
+// BRAND COLOURS
+$brand-success: darken(#5cb85c, 10%);
+
+
+// GENERAL
+
+// Background colour
+$body-bg: #0f405e;
+// Global text colour
+$text-color: white;
+
+
+// NAVBAR
+
+// Navbar height
+$navbar-height: 40px;
+
+// Navbar background colour
+$navbar-default-bg: $primary-col;
+
+// Navbar text colour
+$navbar-default-link-color: white;
+$navbar-default-link-active-color: darken($navbar-default-link-color, 25%);
+
+
+// That slightly annoying line under page headers
+$page-header-border-color: $primary-col;
+
+
+// PANELS
+
+// Background colour
+$panel-bg: $primary-col;
+// Border colour
+$panel-default-border: $secondary-col;
+// Border radius
+$panel-border-radius: 8px;
+// Text colour
+$panel-default-text: white;
+
+
+// POPOVERS
+
+// Background colour
+$popover-bg: $primary-col;
+// Title background colour
+$popover-title-bg: $secondary-col;
+// Border colour
+$popover-border-color: $secondary-col;
+
