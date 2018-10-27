@@ -30,6 +30,8 @@ const initMap = () => {
 
 // Initial page load
 $(document).ready(() => {
+  InstantClick.init();
+
   loadPopovers();
   initMap();
 });
