@@ -43,7 +43,7 @@ gulp.task('build-markup', () => {
 });
 
 gulp.task('build-styles', () => {
-  gulp.src('src/scss/**/*.scss')
+  gulp.src('src/scss/**/*.@(css|scss)')
     // Compile SASS
     .pipe(sass().on('error', sass.logError))
     // Concat
@@ -79,11 +79,11 @@ gulp.task('build-scripts', () => {
 });
 
 gulp.task('build-images', () => {
-  return gulp.src('src/img/**/*')
+  return gulp.src('src/images/**/*')
     // Minify
     .pipe(imagemin())
     // Output
-    .pipe(gulp.dest('dist/img'));
+    .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('build-downloads', () => {
